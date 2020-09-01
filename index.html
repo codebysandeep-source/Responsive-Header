@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Mask</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <!-- Header -->
+        <header>
+            <a href="#" class="logo">Travel</a>
+            <div class="toggle" onclick="toggleMenu()"></div>
+        </header>
+        <!-- Text -->
+        <div class="text">
+            <h2>Dream<br/>Trip</h2>
+        </div>
+        <!-- Play -->
+        <div class="play" onclick="videoToggle()">
+            <img src="images/play.png" alt="play"><span>Play Video</span>
+        </div>
+        <!-- Social -->
+        <ul class="sci">
+            <li><a href="#"><img src="images/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="images/twitter.png" alt=""></a></li>
+            <li><a href="#"><img src="images/instagram.png" alt=""></a></li>
+        </ul>
+        <!-- Navigation -->
+        <div class="navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Booking</a></li>
+                <li><a href="#">Tour</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="trailer">
+        <video src="video/clip.mp4" controls="true"></video>
+        <img src="images/close.png" class="close" onclick="videoToggle()" alt="close">
+    </div>
+
+    <!-- SCRIPT -->
+    <script>
+        function toggleMenu(){
+            const menuToggle=document.querySelector('.toggle');
+            const navigation=document.querySelector('.navigation');
+            menuToggle.classList.toggle('active');
+            navigation.classList.toggle('active');
+        }
+        function videoToggle(){
+            const trailer=document.querySelector('.trailer');
+            const video=document.querySelector('video');
+            trailer.classList.toggle('active');
+            video.currentTime=0;
+            video.pause(); 
+        }
+    </script>
+</body>
+</html>
